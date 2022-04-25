@@ -1,0 +1,211 @@
+.auth__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 1rem;
+  background: linear-gradient(319deg, #7d83ff, #7d83ff, #c14953, #c14953);
+  background-size: 800% 800%;
+  z-index: -1;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.auth__card {
+  width: 50rem;
+  height: 50rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  @media (max-width: 576px) {
+    width: 35rem;
+    height: 50rem;
+  }
+
+  .aut__directions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+
+    a {
+      margin: 0 1.5rem;
+      font-size: 2.7rem;
+      color: #7d83ff;
+      font-weight: 900;
+
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+      position: relative;
+
+      &:hover {
+        color: #007fff;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+
+        width: 0;
+        height: 5px;
+        background: $primary;
+        border-radius: 30px;
+        transition: width 2s ease-in-out;
+      }
+      &.active::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .container__form {
+    margin-top: 1rem;
+    padding: 0 4rem;
+  }
+}
+.Error {
+  display: block;
+  background-color: #c14953;
+  color: #fff;
+  border: 2px solid #c14953;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.login__form {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  .login__content {
+    margin-top: 5rem;
+    p {
+      text-align: center;
+    }
+  }
+
+  .input__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    input {
+      display: block;
+      width: 100%;
+      height: 5rem;
+      border: 0;
+      border-bottom: 3px solid #e0e0e0;
+      padding: 0 2.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      outline: none;
+      transition: border 0.5s linear;
+    }
+    input:focus {
+      border-bottom: 3px solid $primary;
+    }
+
+    i {
+      position: absolute;
+      top: 31%;
+      left: 0;
+      padding-right: 1rem;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+
+      transition: all 0.3s ease;
+    }
+    input:focus ~ i {
+      color: $primary;
+    }
+  }
+
+  .google-btn {
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 30rem;
+    height: 4rem;
+    background-color: $google-blue;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s linear;
+    .google-icon-wrapper {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      background-color: $white;
+    }
+    .google-icon {
+      position: absolute;
+      margin-top: 11px;
+      margin-left: 11px;
+
+      width: 18px;
+      height: 18px;
+    }
+    .btn-text {
+      float: right;
+      margin: 11px 50px 0 0;
+      color: $white;
+      font-size: 1.6rem;
+      letter-spacing: 0.2px;
+      text-align: center;
+    }
+
+    &:active {
+      background: $button-active-blue;
+    }
+    &:hover {
+      opacity: 90%;
+    }
+  }
+}
+.swal-wide {
+  width: 50rem !important;
+  font-size: 2rem !important;
+  z-index: 9999 !important;
+  height: 50rem !important;
+}

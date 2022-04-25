@@ -1,0 +1,333 @@
+.journal__main-content {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  max-height: max-content;
+
+  .journal__sidebar {
+    background: $tertiary;
+    width: 25vw;
+    color: $ligthgrey;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $ligthgrey;
+    max-height: max-content;
+    .journal__sidebar--navbar {
+      display: flex;
+      flex-direction: column;
+
+      padding: 1rem;
+      background: $tertiary;
+      color: $ligthgrey;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      border-bottom: 1px solid $ligthgrey;
+
+      .journal__sidebar--navbar--menu {
+        display: flex;
+        align-items: center;
+        margin: 1rem 1rem;
+        justify-content: space-between;
+        
+        button{
+          background: transparent;
+          border: none;
+          color: $ligthgrey;
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+          cursor: pointer;
+        }
+
+        h3 {
+          font-weight: 800;
+          font-size: 1.8rem;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+          span {
+            margin-left: 0.5rem;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        i {
+          font-size: 1.8rem;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    .journal__sidebar--newentry {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+      border-bottom: 1px solid $ligthgrey;
+
+      h3 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 4.5rem;
+      }
+
+      button {
+        margin: 3rem 0;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: $ligthgrey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+
+        span {
+          margin-top: 1.5rem;
+          font-weight: bold;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .journal__entries {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: #000;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $darkgrey;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background-color: $darkgrey;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: $ligthgrey;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #e1e1e1;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-track:hover,
+      &::-webkit-scrollbar-track:active {
+        background: #d4d4d4;
+      }
+      .journal__entry {
+        display: flex;
+        width: 100%;
+        height: 12rem;
+        background-color: $white;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+
+        .journal__entry--picture {
+          border-radius: 0.5rem 0 0 0.5rem;
+          width: 30%;
+          height: 100%;
+        }
+        .journal__entry--body {
+          width: 70%;
+          height: 100%;
+          padding: 1rem;
+          font-size: 1.4rem;
+          color: $darkgrey;
+
+          .journal__entry--title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: $primary;
+          }
+
+          .journal__entry--content {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+          }
+          .journal__entry--date-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: $tertiary;
+            }
+            h3 {
+              font-size: 1.5rem;
+              font-weight: bold;
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notes__main--content {
+    width: 75vw;
+    padding: 1rem;
+    height: 100vh;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(319deg, #7d83ff, #7d83ff, #c14953, #c14953);
+    background-size: 800% 800%;
+
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    .notes__appbar {
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      color: $darkgrey;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: none;
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+      justify-content: space-between;
+
+      .notes__buttons {
+        display: flex;
+        flex-direction: column;
+        buttons {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .notes__content {
+      margin: 10rem 0;
+      background-color: $white;
+      display: grid;
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      padding: 2rem;
+      border-radius: 1rem;
+      border: none;
+      gap: 4rem;
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+
+      .notes__image {
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 1rem;
+          object-fit: cover;
+        }
+      }
+      .notes__editor {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        h2 {
+          font-size: 2rem;
+          color: $tertiary;
+          font-weight: 900;
+          margin-bottom: 1rem;
+          text-align: left;
+          text-transform: uppercase;
+        }
+        input {
+          width: 100%;
+          height: 10%;
+          border: none;
+          border: 2px solid $tertiary;
+          border-radius: 1rem;
+          padding: 1rem;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $darkgrey;
+          background-color: $white;
+          resize: none;
+          outline: none;
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          transition: all 0.5s ease-in-out;
+          margin-bottom: 2rem;
+          &:focus {
+            border: 2px solid $primary;
+          }
+        }
+
+        textarea {
+          width: 100%;
+          height: 90%;
+          border: none;
+          border: 2px solid $tertiary;
+          border-radius: 1rem;
+          padding: 1rem;
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $darkgrey;
+          background-color: $white;
+          resize: none;
+          outline: none;
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          transition: all 0.5s ease-in-out;
+          margin-bottom: 2rem;
+          &:focus {
+            border: 2px solid $primary;
+          }
+        }
+      }
+    }
+  }
+  
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  
+}
